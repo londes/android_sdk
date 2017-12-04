@@ -52,6 +52,9 @@ do this in each one.
 the foreground, you should also call `userLeftView()`, which can be done from your
 activity's `onPause()` function. If your app has multiple activities, be sure to
 do this in each one.
+* When a user closes the app, use `stopTracker()` to destroy the Tracker object. This will remove
+any retained values in the Tracker such as path, title and engaged time. The Tracker will have to
+be re-initialized using `setupTracker()`, which should occur on app re-entry.
 * You will usually want to call `userInteracted()` from your activity's
 `onUserInteraction()` function,
 as well, and any time the user types, you will want to call `userTyped()`. If your app
